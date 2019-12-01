@@ -92,11 +92,11 @@ public class buscarCliente extends JFrame {
 			
 			JLabel lblSeleccioneUnCliente = new JLabel("Seleccione un Cliente");
 			
-			JButton button_1 = new JButton("Aceptar");
-			button_1.addActionListener(new ActionListener() {
+			JButton btnAceptar = new JButton("Aceptar");
+			btnAceptar.addActionListener(new ActionListener() {
 				@SuppressWarnings("deprecation")
 				public void actionPerformed(ActionEvent e) {
-					if(e.getSource() == button_1)
+					if(e.getSource() == btnAceptar)
 					{
 						buscarCliente1 b = new buscarCliente1();
 						b.setVisible(true);
@@ -106,16 +106,16 @@ public class buscarCliente extends JFrame {
 					}
 				}
 			});
-			button_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+			btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 11));
 			
-			JButton button_2 = new JButton("Cancelar");
-			button_2.addActionListener(new ActionListener() {
+			JButton btnCancelar = new JButton("Cancelar");
+			btnCancelar.addActionListener(new ActionListener() {
 				@SuppressWarnings("deprecation")
 				public void actionPerformed(ActionEvent e) {
 					hide();
 				}
 			});
-			button_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+			btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 11));
 			GroupLayout gl_panel_3 = new GroupLayout(panel_3);
 			gl_panel_3.setHorizontalGroup(
 				gl_panel_3.createParallelGroup(Alignment.LEADING)
@@ -126,9 +126,9 @@ public class buscarCliente extends JFrame {
 								.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE))
 							.addGroup(Alignment.LEADING, gl_panel_3.createSequentialGroup()
 								.addContainerGap(572, Short.MAX_VALUE)
-								.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnAceptar, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
 								.addGap(18)
-								.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE))
 							.addGroup(Alignment.LEADING, gl_panel_3.createSequentialGroup()
 								.addGap(27)
 								.addComponent(lblSeleccioneUnCliente)))
@@ -143,8 +143,8 @@ public class buscarCliente extends JFrame {
 						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
 						.addGroup(gl_panel_3.createParallelGroup(Alignment.BASELINE)
-							.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
-							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+							.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)
+							.addComponent(btnAceptar, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
 						.addGap(24))
 			);
 			
@@ -403,7 +403,6 @@ public class buscarCliente extends JFrame {
 					String clienteNumero= Pais + cuerpoNumero;
 					
 					int numeroCliente = Integer.parseInt(clienteNumero);
-					System.out.println("El STring numero de cliene y en numero" + clienteNumero + numeroCliente);
 					
 					String nombres = nombreCliente.getText();
 					if(nombres.length() > 0)
