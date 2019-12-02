@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Provincia  {
 
 	private int idProvincia;
-	private Integer idPais;
+	private Pais pais;
 	private String nombre;
 
 	public Provincia() {
@@ -24,9 +24,9 @@ public class Provincia  {
 		this.idProvincia = idProvincia;
 	}
 
-	public Provincia(int idProvincia, Integer idPais, String nombre) {
+	public Provincia(int idProvincia, Pais idPais, String nombre) {
 		this.idProvincia = idProvincia;
-		this.idPais = idPais;
+		this.pais = idPais;
 		this.nombre = nombre;
 	}
 
@@ -42,12 +42,12 @@ public class Provincia  {
 	}
 
 	@Column(name = "idPais")
-	public Integer getIdPais() {
-		return this.idPais;
+	public Pais getIdPais() {
+		return this.pais;
 	}
 
-	public void setIdPais(Integer idPais) {
-		this.idPais = idPais;
+	public void setIdPais(Pais idPais) {
+		this.pais = idPais;
 	}
 
 	@Column(name = "nombre", length = 50)

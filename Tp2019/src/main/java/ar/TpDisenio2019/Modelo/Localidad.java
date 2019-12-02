@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Localidad  {
 
 	private int idLocalidad;
-	private Integer idProvincia;
+	private Provincia provincia;
 	private String nombre;
 
 	public Localidad() {
@@ -24,9 +24,9 @@ public class Localidad  {
 		this.idLocalidad = idLocalidad;
 	}
 
-	public Localidad(int idLocalidad, Integer idProvincia, String nombre) {
+	public Localidad(int idLocalidad, Provincia idProvincia, String nombre) {
 		this.idLocalidad = idLocalidad;
-		this.idProvincia = idProvincia;
+		this.provincia = idProvincia;
 		this.nombre = nombre;
 	}
 
@@ -41,13 +41,13 @@ public class Localidad  {
 		this.idLocalidad = idLocalidad;
 	}
 
-	@Column(name = "idProvincia")
-	public Integer getIdProvincia() {
-		return this.idProvincia;
+
+	public Provincia getProvincia() {
+		return provincia;
 	}
 
-	public void setIdProvincia(Integer idProvincia) {
-		this.idProvincia = idProvincia;
+	public void setProvincia(Provincia provincia) {
+		this.provincia = provincia;
 	}
 
 	@Column(name = "nombre", length = 50)

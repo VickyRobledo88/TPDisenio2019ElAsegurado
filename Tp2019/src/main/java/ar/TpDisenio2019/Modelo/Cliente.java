@@ -17,12 +17,12 @@ import javax.persistence.TemporalType;
 public class Cliente {
 
 	private int idCliente;
-	private Integer idEstadoCivil;
-	private Integer idProfesion;
-	private Integer idDireccion;
-	private Integer idCondicionIva;
-	private Integer idTipoDeDocumento;
-	private Integer idEstadoCliente;
+	private Estadocivil estadoCivil;
+	private Profesion profesion;
+	private Direccion direccion;
+	private Condicioniva condicionIva;
+	private Tipodedocumento tipodedocumento;
+	private Estadocliente estadoCliente;
 	private String nombre;
 	private String apellido;
 	private Integer nroDocumento;
@@ -38,16 +38,16 @@ public class Cliente {
 		this.idCliente = idCliente;
 	}
 
-	public Cliente(int idCliente, Integer idEstadoCivil, Integer idProfesion, Integer idDireccion,
-			Integer idCondicionIva, Integer idTipoDeDocumento, Integer idEstadoCliente, String nombre, String apellido,
+	public Cliente(int idCliente, Estadocivil idEstadoCivil, Profesion idProfesion, Direccion idDireccion,
+			Condicioniva idCondicionIva, Tipodedocumento idTipoDeDocumento, Estadocliente idEstadoCliente, String nombre, String apellido,
 			Integer nroDocumento, String correoElectronico, Date anioDeRegistro, Integer nroCuil, Integer nroCliente) {
 		this.idCliente = idCliente;
-		this.idEstadoCivil = idEstadoCivil;
-		this.idProfesion = idProfesion;
-		this.idDireccion = idDireccion;
-		this.idCondicionIva = idCondicionIva;
-		this.idTipoDeDocumento = idTipoDeDocumento;
-		this.idEstadoCliente = idEstadoCliente;
+		this.estadoCivil = idEstadoCivil;
+		this.profesion = idProfesion;
+		this.direccion = idDireccion;
+		this.condicionIva = idCondicionIva;
+		this.tipodedocumento = idTipoDeDocumento;
+		this.estadoCliente = idEstadoCliente;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.nroDocumento = nroDocumento;
@@ -55,6 +55,55 @@ public class Cliente {
 		this.anioDeRegistro = anioDeRegistro;
 		this.nroCuil = nroCuil;
 		this.nroCliente = nroCliente;
+	}
+
+	
+	public Estadocivil getEstadoCivil() {
+		return estadoCivil;
+	}
+
+	public void setEstadoCivil(Estadocivil estadoCivil) {
+		this.estadoCivil = estadoCivil;
+	}
+
+	public Profesion getProfesion() {
+		return profesion;
+	}
+
+	public void setProfesion(Profesion profesion) {
+		this.profesion = profesion;
+	}
+
+	public Direccion getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
+	}
+
+	public Condicioniva getCondicionIva() {
+		return condicionIva;
+	}
+
+	public void setCondicionIva(Condicioniva condicionIva) {
+		this.condicionIva = condicionIva;
+	}
+
+	public Tipodedocumento getTipodedocumento() {
+		return tipodedocumento;
+	}
+
+	public void setTipodedocumento(Tipodedocumento tipodedocumento) {
+		this.tipodedocumento = tipodedocumento;
+	}
+
+	public Estadocliente getEstadoCliente() {
+		return estadoCliente;
+	}
+
+	public void setEstadoCliente(Estadocliente estadoCliente) {
+		this.estadoCliente = estadoCliente;
 	}
 
 	@Id
@@ -68,61 +117,8 @@ public class Cliente {
 		this.idCliente = idCliente;
 	}
 
-	@Column(name = "idEstadoCivil")
-	public Integer getIdEstadoCivil() {
-		return this.idEstadoCivil;
-	}
 
-	public void setIdEstadoCivil(Integer idEstadoCivil) {
-		this.idEstadoCivil = idEstadoCivil;
-	}
-
-	@Column(name = "idProfesion")
-	public Integer getIdProfesion() {
-		return this.idProfesion;
-	}
-
-	public void setIdProfesion(Integer idProfesion) {
-		this.idProfesion = idProfesion;
-	}
-
-	@Column(name = "idDireccion")
-	public Integer getIdDireccion() {
-		return this.idDireccion;
-	}
-
-	public void setIdDireccion(Integer idDireccion) {
-		this.idDireccion = idDireccion;
-	}
-
-	@Column(name = "idCondicionIVA")
-	public Integer getIdCondicionIva() {
-		return this.idCondicionIva;
-	}
-
-	public void setIdCondicionIva(Integer idCondicionIva) {
-		this.idCondicionIva = idCondicionIva;
-	}
-
-	@Column(name = "idTipoDeDocumento")
-	public Integer getIdTipoDeDocumento() {
-		return this.idTipoDeDocumento;
-	}
-
-	public void setIdTipoDeDocumento(Integer idTipoDeDocumento) {
-		this.idTipoDeDocumento = idTipoDeDocumento;
-	}
-
-	@Column(name = "idEstadoCliente")
-	public Integer getIdEstadoCliente() {
-		return this.idEstadoCliente;
-	}
-
-	public void setIdEstadoCliente(Integer idEstadoCliente) {
-		this.idEstadoCliente = idEstadoCliente;
-	}
-
-	@Column(name = "nombre", length = 50)
+		@Column(name = "nombre", length = 50)
 	public String getNombre() {
 		return this.nombre;
 	}

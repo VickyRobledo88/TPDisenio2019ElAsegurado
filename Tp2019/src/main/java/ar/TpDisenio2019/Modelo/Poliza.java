@@ -17,20 +17,20 @@ import javax.persistence.TemporalType;
 public class Poliza  {
 
 	private int identNroPoliza;
-	private Integer idCliente;
-	private Integer idKmPorAnio;
-	private Integer idMedidasSeguridad;
-	private Integer idEstado;
-	private Integer idEstadoCliente;
-	private Integer nroPoliza;
-	private Integer idVehiculo;
-	private Integer idParametrosGenerales;
-	private Integer idFormasDePago;
-	private Integer idTipoCobertura;
-	private Integer idCuotas;
-	private Integer idDatosHijo;
-	private Integer idFacUsados;
-	private Integer idSiniestro;
+	private Cliente cliente;
+	private Kmporanio kmporanio;
+	private Medidasdeseguridad medidasdeseguridad;
+	private Estado  estado;
+	private Estadocliente estadoCliente;
+	private Numeropoliza nroPoliza;
+	private Vehiculo vehiculo;
+	private Parametrosgenerales parametrosgenerales;
+	private Formasdepago formasdepago;
+	private Tipocobertura tipoCobertura;
+	private Cuota cuota;
+	private Datosdehijo datosdehijo;
+	private Factoresusados factoresusados;
+	private Siniestro siniestro;
 	private Date fechaInicioVigencia;
 	private Date fechaFinVigencia;
 	private Float sumaAsegurada;
@@ -44,31 +44,154 @@ public class Poliza  {
 		this.identNroPoliza = identNroPoliza;
 	}
 
-	public Poliza(int identNroPoliza, Integer idCliente, Integer idKmPorAnio, Integer idMedidasSeguridad,
-			Integer idEstado, Integer idEstadoCliente, Integer nroPoliza, Integer idVehiculo,
-			Integer idParametrosGenerales, Integer idFormasDePago, Integer idTipoCobertura, Integer idCuotas,
-			Integer idDatosHijo, Integer idFacUsados, Integer idSiniestro, Date fechaInicioVigencia,
-			Date fechaFinVigencia, Float sumaAsegurada, Character nroSiniestro, Integer cantidad) {
+	
+	
+	
+	
+	public Poliza(int identNroPoliza, Cliente cliente, Kmporanio kmporanio, Medidasdeseguridad medidasdeseguridad,
+			Estado estado, Estadocliente estadoCliente, Numeropoliza nroPoliza, Vehiculo vehiculo,
+			Parametrosgenerales parametrosgenerales, Formasdepago idFormasDePago, Tipocobertura tipoCobertura,
+			Cuota cuota, Datosdehijo datosdehijo, Factoresusados factoresusados, Siniestro siniestro,
+			Date fechaInicioVigencia, Date fechaFinVigencia, Float sumaAsegurada, Character nroSiniestro,
+			Integer cantidad) {
+		super();
 		this.identNroPoliza = identNroPoliza;
-		this.idCliente = idCliente;
-		this.idKmPorAnio = idKmPorAnio;
-		this.idMedidasSeguridad = idMedidasSeguridad;
-		this.idEstado = idEstado;
-		this.idEstadoCliente = idEstadoCliente;
+		this.cliente = cliente;
+		this.kmporanio = kmporanio;
+		this.medidasdeseguridad = medidasdeseguridad;
+		this.estado = estado;
+		this.estadoCliente = estadoCliente;
 		this.nroPoliza = nroPoliza;
-		this.idVehiculo = idVehiculo;
-		this.idParametrosGenerales = idParametrosGenerales;
-		this.idFormasDePago = idFormasDePago;
-		this.idTipoCobertura = idTipoCobertura;
-		this.idCuotas = idCuotas;
-		this.idDatosHijo = idDatosHijo;
-		this.idFacUsados = idFacUsados;
-		this.idSiniestro = idSiniestro;
+		this.vehiculo = vehiculo;
+		this.parametrosgenerales = parametrosgenerales;
+		this.formasdepago = idFormasDePago;
+		this.tipoCobertura = tipoCobertura;
+		this.cuota = cuota;
+		this.datosdehijo = datosdehijo;
+		this.factoresusados = factoresusados;
+		this.siniestro = siniestro;
 		this.fechaInicioVigencia = fechaInicioVigencia;
 		this.fechaFinVigencia = fechaFinVigencia;
 		this.sumaAsegurada = sumaAsegurada;
 		this.nroSiniestro = nroSiniestro;
 		this.cantidad = cantidad;
+	}
+
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Kmporanio getKmporanio() {
+		return kmporanio;
+	}
+
+	public void setKmporanio(Kmporanio kmporanio) {
+		this.kmporanio = kmporanio;
+	}
+
+	public Medidasdeseguridad getMedidasdeseguridad() {
+		return medidasdeseguridad;
+	}
+
+	public void setMedidasdeseguridad(Medidasdeseguridad medidasdeseguridad) {
+		this.medidasdeseguridad = medidasdeseguridad;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public Estadocliente getEstadoCliente() {
+		return estadoCliente;
+	}
+
+	public void setEstadoCliente(Estadocliente estadoCliente) {
+		this.estadoCliente = estadoCliente;
+	}
+
+	public Vehiculo getVehiculo() {
+		return vehiculo;
+	}
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
+	}
+
+	public Parametrosgenerales getParametrosgenerales() {
+		return parametrosgenerales;
+	}
+
+	public void setParametrosgenerales(Parametrosgenerales parametrosgenerales) {
+		this.parametrosgenerales = parametrosgenerales;
+	}
+
+	public Tipocobertura getTipoCobertura() {
+		return tipoCobertura;
+	}
+
+	public void setTipoCobertura(Tipocobertura tipoCobertura) {
+		this.tipoCobertura = tipoCobertura;
+	}
+
+	public Cuota getCuota() {
+		return cuota;
+	}
+
+	public void setCuota(Cuota cuota) {
+		this.cuota = cuota;
+	}
+
+	public Datosdehijo getDatosdehijo() {
+		return datosdehijo;
+	}
+
+	public void setDatosdehijo(Datosdehijo datosdehijo) {
+		this.datosdehijo = datosdehijo;
+	}
+
+	public Factoresusados getFactoresusados() {
+		return factoresusados;
+	}
+
+	public void setFactoresusados(Factoresusados factoresusados) {
+		this.factoresusados = factoresusados;
+	}
+
+	public Siniestro getSiniestro() {
+		return siniestro;
+	}
+
+	public void setSiniestro(Siniestro siniestro) {
+		this.siniestro = siniestro;
+	}
+
+	public void setNroPoliza(Numeropoliza nroPoliza) {
+		this.nroPoliza = nroPoliza;
+	}
+
+	public void setIdFormasDePago(Formasdepago idFormasDePago) {
+		this.formasdepago = idFormasDePago;
+	}
+
+	public Formasdepago getFormasdepago() {
+		return formasdepago;
+	}
+
+	public void setFormasdepago(Formasdepago formasdepago) {
+		this.formasdepago = formasdepago;
+	}
+
+	public Numeropoliza getNroPoliza() {
+		return nroPoliza;
 	}
 
 	@Id
@@ -82,131 +205,8 @@ public class Poliza  {
 		this.identNroPoliza = identNroPoliza;
 	}
 
-	@Column(name = "idCliente")
-	public Integer getIdCliente() {
-		return this.idCliente;
-	}
-
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
-	}
-
-	@Column(name = "idKmPorAnio")
-	public Integer getIdKmPorAnio() {
-		return this.idKmPorAnio;
-	}
-
-	public void setIdKmPorAnio(Integer idKmPorAnio) {
-		this.idKmPorAnio = idKmPorAnio;
-	}
-
-	@Column(name = "idMedidasSeguridad")
-	public Integer getIdMedidasSeguridad() {
-		return this.idMedidasSeguridad;
-	}
-
-	public void setIdMedidasSeguridad(Integer idMedidasSeguridad) {
-		this.idMedidasSeguridad = idMedidasSeguridad;
-	}
-
-	@Column(name = "idEstado")
-	public Integer getIdEstado() {
-		return this.idEstado;
-	}
-
-	public void setIdEstado(Integer idEstado) {
-		this.idEstado = idEstado;
-	}
-
-	@Column(name = "idEstadoCliente")
-	public Integer getIdEstadoCliente() {
-		return this.idEstadoCliente;
-	}
-
-	public void setIdEstadoCliente(Integer idEstadoCliente) {
-		this.idEstadoCliente = idEstadoCliente;
-	}
-
-	@Column(name = "nroPoliza")
-	public Integer getNroPoliza() {
-		return this.nroPoliza;
-	}
-
-	public void setNroPoliza(Integer nroPoliza) {
-		this.nroPoliza = nroPoliza;
-	}
-
-	@Column(name = "idVehiculo")
-	public Integer getIdVehiculo() {
-		return this.idVehiculo;
-	}
-
-	public void setIdVehiculo(Integer idVehiculo) {
-		this.idVehiculo = idVehiculo;
-	}
-
-	@Column(name = "idParametrosGenerales")
-	public Integer getIdParametrosGenerales() {
-		return this.idParametrosGenerales;
-	}
-
-	public void setIdParametrosGenerales(Integer idParametrosGenerales) {
-		this.idParametrosGenerales = idParametrosGenerales;
-	}
-
-	@Column(name = "idFormasDePago")
-	public Integer getIdFormasDePago() {
-		return this.idFormasDePago;
-	}
-
-	public void setIdFormasDePago(Integer idFormasDePago) {
-		this.idFormasDePago = idFormasDePago;
-	}
-
-	@Column(name = "idTipoCobertura")
-	public Integer getIdTipoCobertura() {
-		return this.idTipoCobertura;
-	}
-
-	public void setIdTipoCobertura(Integer idTipoCobertura) {
-		this.idTipoCobertura = idTipoCobertura;
-	}
-
-	@Column(name = "idCuotas")
-	public Integer getIdCuotas() {
-		return this.idCuotas;
-	}
-
-	public void setIdCuotas(Integer idCuotas) {
-		this.idCuotas = idCuotas;
-	}
-
-	@Column(name = "idDatosHijo")
-	public Integer getIdDatosHijo() {
-		return this.idDatosHijo;
-	}
-
-	public void setIdDatosHijo(Integer idDatosHijo) {
-		this.idDatosHijo = idDatosHijo;
-	}
-
-	@Column(name = "idFacUsados")
-	public Integer getIdFacUsados() {
-		return this.idFacUsados;
-	}
-
-	public void setIdFacUsados(Integer idFacUsados) {
-		this.idFacUsados = idFacUsados;
-	}
-
-	@Column(name = "idSiniestro")
-	public Integer getIdSiniestro() {
-		return this.idSiniestro;
-	}
-
-	public void setIdSiniestro(Integer idSiniestro) {
-		this.idSiniestro = idSiniestro;
-	}
+              
+	
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "fechaInicioVigencia", length = 10)

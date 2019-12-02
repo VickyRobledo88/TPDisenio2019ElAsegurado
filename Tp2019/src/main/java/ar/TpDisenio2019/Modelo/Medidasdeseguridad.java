@@ -14,21 +14,21 @@ import javax.persistence.Table;
 public class Medidasdeseguridad  {
 
 	private int idMedidasSeguridad;
-	private int idMedPorc;
+	private Medidasdeseguridadporc medidasdeseguridadporc;
 	private String nombre;
 	private Float porcentaje;
 
 	public Medidasdeseguridad() {
 	}
 
-	public Medidasdeseguridad(int idMedidasSeguridad, int idMedPorc) {
+	public Medidasdeseguridad(int idMedidasSeguridad, Medidasdeseguridadporc idMedPorc) {
 		this.idMedidasSeguridad = idMedidasSeguridad;
-		this.idMedPorc = idMedPorc;
+		this.medidasdeseguridadporc = idMedPorc;
 	}
 
-	public Medidasdeseguridad(int idMedidasSeguridad, int idMedPorc, String nombre, Float porcentaje) {
+	public Medidasdeseguridad(int idMedidasSeguridad, Medidasdeseguridadporc idMedPorc, String nombre, Float porcentaje) {
 		this.idMedidasSeguridad = idMedidasSeguridad;
-		this.idMedPorc = idMedPorc;
+		this.medidasdeseguridadporc = idMedPorc;
 		this.nombre = nombre;
 		this.porcentaje = porcentaje;
 	}
@@ -44,13 +44,12 @@ public class Medidasdeseguridad  {
 		this.idMedidasSeguridad = idMedidasSeguridad;
 	}
 
-	@Column(name = "idMedPorc", nullable = false)
-	public int getIdMedPorc() {
-		return this.idMedPorc;
+	public Medidasdeseguridadporc getMedidasdeseguridadporc() {
+		return medidasdeseguridadporc;
 	}
 
-	public void setIdMedPorc(int idMedPorc) {
-		this.idMedPorc = idMedPorc;
+	public void setMedidasdeseguridadporc(Medidasdeseguridadporc medidasdeseguridadporc) {
+		this.medidasdeseguridadporc = medidasdeseguridadporc;
 	}
 
 	@Column(name = "nombre", length = 50)

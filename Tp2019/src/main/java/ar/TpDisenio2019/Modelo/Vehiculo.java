@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Vehiculo  {
 
 	private int idVehiculo;
-	private Integer idModelo;
+	private Modelo modelo;
 	private String motor;
 	private String chasis;
 	private Integer anio;
@@ -27,9 +27,9 @@ public class Vehiculo  {
 		this.idVehiculo = idVehiculo;
 	}
 
-	public Vehiculo(int idVehiculo, Integer idModelo, String motor, String chasis, Integer anio, String patente) {
+	public Vehiculo(int idVehiculo, Modelo idModelo, String motor, String chasis, Integer anio, String patente) {
 		this.idVehiculo = idVehiculo;
-		this.idModelo = idModelo;
+		this.modelo = idModelo;
 		this.motor = motor;
 		this.chasis = chasis;
 		this.anio = anio;
@@ -48,12 +48,12 @@ public class Vehiculo  {
 	}
 
 	@Column(name = "idModelo")
-	public Integer getIdModelo() {
-		return this.idModelo;
+	public Modelo getIdModelo() {
+		return this.modelo;
 	}
 
-	public void setIdModelo(Integer idModelo) {
-		this.idModelo = idModelo;
+	public void setIdModelo(Modelo idModelo) {
+		this.modelo = idModelo;
 	}
 
 	@Column(name = "motor", length = 20)

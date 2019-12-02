@@ -14,13 +14,29 @@ import javax.persistence.Table;
 public class Medidasdeseguridadporc {
 
 	private int idMedPorc;
+	private float porcentaje;
+	
+	
 
-	public Medidasdeseguridadporc() {
+	public Medidasdeseguridadporc(int idMedPorc, float porcentaje) {
+		super();
+		this.idMedPorc = idMedPorc;
+		this.porcentaje = porcentaje;
+	}
+
+	public float getPorcentaje() {
+		return porcentaje;
+	}
+
+	public void setPorcentaje(float porcentaje) {
+		this.porcentaje = porcentaje;
 	}
 
 	public Medidasdeseguridadporc(int idMedPorc) {
 		this.idMedPorc = idMedPorc;
 	}
+	
+	
 
 	@Id
 

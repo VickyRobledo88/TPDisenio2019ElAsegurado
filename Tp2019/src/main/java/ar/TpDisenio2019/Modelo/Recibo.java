@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class Recibo  {
 
 	private int idRecibo;
-	private Integer idOperador;
+	private Operador operador;
 	private Integer nroRecibo;
 	private Date fecha;
 	private Integer hora;
@@ -31,10 +31,10 @@ public class Recibo  {
 		this.idRecibo = idRecibo;
 	}
 
-	public Recibo(int idRecibo, Integer idOperador, Integer nroRecibo, Date fecha, Integer hora, Date ultimoDiaDePago,
+	public Recibo(int idRecibo, Operador idOperador, Integer nroRecibo, Date fecha, Integer hora, Date ultimoDiaDePago,
 			Float importeTotal) {
 		this.idRecibo = idRecibo;
-		this.idOperador = idOperador;
+		this.operador = idOperador;
 		this.nroRecibo = nroRecibo;
 		this.fecha = fecha;
 		this.hora = hora;
@@ -52,14 +52,17 @@ public class Recibo  {
 	public void setIdRecibo(int idRecibo) {
 		this.idRecibo = idRecibo;
 	}
+	
+	
+	
 
 	@Column(name = "idOperador")
-	public Integer getIdOperador() {
-		return this.idOperador;
+	public Operador getIdOperador() {
+		return this.operador;
 	}
 
-	public void setIdOperador(Integer idOperador) {
-		this.idOperador = idOperador;
+	public void setIdOperador(Operador idOperador) {
+		this.operador = idOperador;
 	}
 
 	@Column(name = "nroRecibo")

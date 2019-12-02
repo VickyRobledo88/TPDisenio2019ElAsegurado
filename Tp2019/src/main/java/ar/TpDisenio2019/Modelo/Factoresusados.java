@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Factoresusados  {
 
 	private int idFacUsados;
-	private Integer idMedPorc;
+	private Medidasdeseguridadporc medidasdeseguridadporc;
 	private Float porcentajeCobertura;
 	private Float porcentajePorRiesgoDeDomicilio;
 	private Float porcentajePorKm;
@@ -34,12 +34,12 @@ public class Factoresusados  {
 		this.idFacUsados = idFacUsados;
 	}
 
-	public Factoresusados(int idFacUsados, Integer idMedPorc, Float porcentajeCobertura,
+	public Factoresusados(int idFacUsados, Medidasdeseguridadporc idMedPorc, Float porcentajeCobertura,
 			Float porcentajePorRiesgoDeDomicilio, Float porcentajePorKm, Float porcentajePorModeloVehiculo,
 			Float porcentajePorMedidasDeSeguridad, Float porcentajePorSiniestro, Float porcentajePorHijo,
 			Float importePorDescuentosPagoSemestral, Float descuentoPorUnidad, Float montoTotal, Float prima) {
 		this.idFacUsados = idFacUsados;
-		this.idMedPorc = idMedPorc;
+		this.medidasdeseguridadporc = idMedPorc;
 		this.porcentajeCobertura = porcentajeCobertura;
 		this.porcentajePorRiesgoDeDomicilio = porcentajePorRiesgoDeDomicilio;
 		this.porcentajePorKm = porcentajePorKm;
@@ -64,13 +64,15 @@ public class Factoresusados  {
 		this.idFacUsados = idFacUsados;
 	}
 
-	@Column(name = "idMedPorc")
-	public Integer getIdMedPorc() {
-		return this.idMedPorc;
+
+	
+
+	public Medidasdeseguridadporc getMedidasdeseguridadporc() {
+		return medidasdeseguridadporc;
 	}
 
-	public void setIdMedPorc(Integer idMedPorc) {
-		this.idMedPorc = idMedPorc;
+	public void setMedidasdeseguridadporc(Medidasdeseguridadporc medidasdeseguridadporc) {
+		this.medidasdeseguridadporc = medidasdeseguridadporc;
 	}
 
 	@Column(name = "porcentajeCobertura", precision = 12, scale = 0)

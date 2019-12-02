@@ -17,11 +17,11 @@ import javax.persistence.TemporalType;
 public class Modificacionpoliza  {
 
 	private int idModificacionPoliza;
-	private int idVehiculo;
-	private int idMedidasSeguridad;
-	private int idDatosHijo;
-	private int idTipoCobertura;
-	private int identNroPoliza;
+	private Vehiculo vehiculo;
+	private Medidasdeseguridad medidasdeseguridad;
+	private Datosdehijo datosdehijo;
+	private Tipocobertura tipocobertura;
+	private Poliza poliza;
 	private Date anio;
 	private String patente;
 	private String motor;
@@ -33,25 +33,25 @@ public class Modificacionpoliza  {
 	public Modificacionpoliza() {
 	}
 
-	public Modificacionpoliza(int idModificacionPoliza, int idVehiculo, int idMedidasSeguridad, int idDatosHijo,
-			int idTipoCobertura, int identNroPoliza) {
+	public Modificacionpoliza(int idModificacionPoliza, Vehiculo idVehiculo, Medidasdeseguridad idMedidasSeguridad, Datosdehijo idDatosHijo,
+			Tipocobertura idTipoCobertura, Poliza identNroPoliza) {
 		this.idModificacionPoliza = idModificacionPoliza;
-		this.idVehiculo = idVehiculo;
-		this.idMedidasSeguridad = idMedidasSeguridad;
-		this.idDatosHijo = idDatosHijo;
-		this.idTipoCobertura = idTipoCobertura;
-		this.identNroPoliza = identNroPoliza;
+		this.vehiculo = idVehiculo;
+		this.medidasdeseguridad = idMedidasSeguridad;
+		this.datosdehijo = idDatosHijo;
+		this.tipocobertura = idTipoCobertura;
+		this.poliza = identNroPoliza;
 	}
 
-	public Modificacionpoliza(int idModificacionPoliza, int idVehiculo, int idMedidasSeguridad, int idDatosHijo,
-			int idTipoCobertura, int identNroPoliza, Date anio, String patente, String motor, String chasis,
+	public Modificacionpoliza(int idModificacionPoliza, Vehiculo idVehiculo, Medidasdeseguridad idMedidasSeguridad, Datosdehijo idDatosHijo,
+			Tipocobertura idTipoCobertura, Poliza identNroPoliza, Date anio, String patente, String motor, String chasis,
 			String nroSiniestro, Integer kmPorAnio, Float montoTotal) {
 		this.idModificacionPoliza = idModificacionPoliza;
-		this.idVehiculo = idVehiculo;
-		this.idMedidasSeguridad = idMedidasSeguridad;
-		this.idDatosHijo = idDatosHijo;
-		this.idTipoCobertura = idTipoCobertura;
-		this.identNroPoliza = identNroPoliza;
+		this.vehiculo = idVehiculo;
+		this.medidasdeseguridad = idMedidasSeguridad;
+		this.datosdehijo = idDatosHijo;
+		this.tipocobertura = idTipoCobertura;
+		this.poliza = identNroPoliza;
 		this.anio = anio;
 		this.patente = patente;
 		this.motor = motor;
@@ -72,50 +72,49 @@ public class Modificacionpoliza  {
 		this.idModificacionPoliza = idModificacionPoliza;
 	}
 
-	@Column(name = "idVehiculo", nullable = false)
-	public int getIdVehiculo() {
-		return this.idVehiculo;
+	
+	
+	public Vehiculo getVehiculo() {
+		return vehiculo;
 	}
 
-	public void setIdVehiculo(int idVehiculo) {
-		this.idVehiculo = idVehiculo;
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
 	}
 
-	@Column(name = "idMedidasSeguridad", nullable = false)
-	public int getIdMedidasSeguridad() {
-		return this.idMedidasSeguridad;
+	public Medidasdeseguridad getMedidasdeseguridad() {
+		return medidasdeseguridad;
 	}
 
-	public void setIdMedidasSeguridad(int idMedidasSeguridad) {
-		this.idMedidasSeguridad = idMedidasSeguridad;
+	public void setMedidasdeseguridad(Medidasdeseguridad medidasdeseguridad) {
+		this.medidasdeseguridad = medidasdeseguridad;
 	}
 
-	@Column(name = "idDatosHijo", nullable = false)
-	public int getIdDatosHijo() {
-		return this.idDatosHijo;
+	public Datosdehijo getDatosdehijo() {
+		return datosdehijo;
 	}
 
-	public void setIdDatosHijo(int idDatosHijo) {
-		this.idDatosHijo = idDatosHijo;
+	public void setDatosdehijo(Datosdehijo datosdehijo) {
+		this.datosdehijo = datosdehijo;
 	}
 
-	@Column(name = "idTipoCobertura", nullable = false)
-	public int getIdTipoCobertura() {
-		return this.idTipoCobertura;
+	public Tipocobertura getTipocobertura() {
+		return tipocobertura;
 	}
 
-	public void setIdTipoCobertura(int idTipoCobertura) {
-		this.idTipoCobertura = idTipoCobertura;
+	public void setTipocobertura(Tipocobertura tipocobertura) {
+		this.tipocobertura = tipocobertura;
 	}
 
-	@Column(name = "identNroPoliza", nullable = false)
-	public int getIdentNroPoliza() {
-		return this.identNroPoliza;
+	public Poliza getPoliza() {
+		return poliza;
 	}
 
-	public void setIdentNroPoliza(int identNroPoliza) {
-		this.identNroPoliza = identNroPoliza;
+	public void setPoliza(Poliza poliza) {
+		this.poliza = poliza;
 	}
+
+
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "anio", length = 0)

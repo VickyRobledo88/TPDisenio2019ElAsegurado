@@ -284,7 +284,7 @@ public class darDeAltaPoliza extends JFrame {
 		
 			cbxProvinciaRiesgo .addItem(provinciaRiesgo.getNombre().toString());
 		
-		
+		cbxProvinciaRiesgo.setSelectedItem(null);
 				
 		
 		GridBagConstraints gbc_cbxProvinciaRiesgo = new GridBagConstraints();
@@ -303,10 +303,36 @@ public class darDeAltaPoliza extends JFrame {
 		gbc_lblLocalidadRiesgo.gridy = 1;
 		pnl_IngresoDeDatos.add(lblLocalidadRiesgo, gbc_lblLocalidadRiesgo);
 		
+		/* LOCALIDAD DE RIESGO */
 		JComboBox<String> cbxLocalidadRiesgo = new JComboBox<String>();
 		cbxLocalidadRiesgo.setBackground(Color.WHITE);
 		cbxLocalidadRiesgo.setForeground(Color.BLACK);
 		cbxLocalidadRiesgo.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		/*
+		cbxProvinciaRiesgo.addItemListener(new ItemListener()
+		{
+			public void itemStateChanged(ItemEvent e)
+			{
+				String provinciaSeleccionada= (String) cbxProvinciaRiesgo.getSelectedItem();
+				//DTOProvincia dtoProvinciaSeleccionada = ;
+				
+				listaDtosLocalidadRiesgo = GestorListasDesplegables.buscarDtosLocalidad(dtoProvinciaSeleccionada);
+				List<String> listaNombresLocalidades = new ArrayList<String>();
+
+				dtoListaLocalidad= GestorListasDesplegables.buscarDtosLocalidad();
+				
+				for(DTOLocalidad localidadRiesgo :  dtoListaLocalidad) 
+				
+					cbxLocalidadRiesgo .addItem(localidadRiesgo.getNombre().toString());
+				
+				cbxLocalidadRiesgo.setSelectedItem(null);
+				
+			}
+		});
+		*/
+		 
+			
+		
 		cbxLocalidadRiesgo.addItem("");
 		cbxLocalidadRiesgo.addItem("Santo Tome");
 		cbxLocalidadRiesgo.addItem("Rosario");

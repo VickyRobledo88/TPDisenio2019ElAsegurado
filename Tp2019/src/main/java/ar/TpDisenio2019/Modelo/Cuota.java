@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class Cuota  {
 
 	private int idCuotas;
-	private Integer idRecibo;
+	private Recibo recibo;
 	private Integer cuotasPagas;
 	private Date vencimiento;
 	private Float valorOriginal;
@@ -33,10 +33,10 @@ public class Cuota  {
 		this.idCuotas = idCuotas;
 	}
 
-	public Cuota(int idCuotas, Integer idRecibo, Integer cuotasPagas, Date vencimiento, Float valorOriginal,
+	public Cuota(int idCuotas, Recibo idRecibo, Integer cuotasPagas, Date vencimiento, Float valorOriginal,
 			Float valorPorMora, Float valorTotalaPagar, Float bonificacion, Float recargoPorMora) {
 		this.idCuotas = idCuotas;
-		this.idRecibo = idRecibo;
+		this.recibo = idRecibo;
 		this.cuotasPagas = cuotasPagas;
 		this.vencimiento = vencimiento;
 		this.valorOriginal = valorOriginal;
@@ -57,13 +57,14 @@ public class Cuota  {
 		this.idCuotas = idCuotas;
 	}
 
-	@Column(name = "idRecibo")
-	public Integer getIdRecibo() {
-		return this.idRecibo;
+	
+
+	public Recibo getRecibo() {
+		return recibo;
 	}
 
-	public void setIdRecibo(Integer idRecibo) {
-		this.idRecibo = idRecibo;
+	public void setRecibo(Recibo recibo) {
+		this.recibo = recibo;
 	}
 
 	@Column(name = "cuotasPagas")

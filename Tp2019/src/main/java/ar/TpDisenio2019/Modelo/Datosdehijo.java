@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class Datosdehijo {
 
 	private int idDatosHijo;
-	private Integer idEstadoCivil;
+	private Estadocivil estadocivil;
 	private Date fecha;
 	private String sexo;
 	private Float porcentaje;
@@ -29,9 +29,9 @@ public class Datosdehijo {
 		this.idDatosHijo = idDatosHijo;
 	}
 
-	public Datosdehijo(int idDatosHijo, Integer idEstadoCivil, Date fecha, String sexo, Float porcentaje) {
+	public Datosdehijo(int idDatosHijo, Estadocivil idEstadoCivil, Date fecha, String sexo, Float porcentaje) {
 		this.idDatosHijo = idDatosHijo;
-		this.idEstadoCivil = idEstadoCivil;
+		this.estadocivil = idEstadoCivil;
 		this.fecha = fecha;
 		this.sexo = sexo;
 		this.porcentaje = porcentaje;
@@ -48,13 +48,14 @@ public class Datosdehijo {
 		this.idDatosHijo = idDatosHijo;
 	}
 
-	@Column(name = "idEstadoCivil")
-	public Integer getIdEstadoCivil() {
-		return this.idEstadoCivil;
+
+
+	public Estadocivil getEstadocivil() {
+		return estadocivil;
 	}
 
-	public void setIdEstadoCivil(Integer idEstadoCivil) {
-		this.idEstadoCivil = idEstadoCivil;
+	public void setEstadocivil(Estadocivil estadocivil) {
+		this.estadocivil = estadocivil;
 	}
 
 	@Temporal(TemporalType.DATE)

@@ -14,25 +14,41 @@ import javax.persistence.Table;
 public class Modelo  {
 
 	private int idModelo;
-	private int idMarca;
-	private Integer idAnioDeVehiculo;
+	private Marca marca;
+	private Aniodevehiculo aniodevehiculo;
 	private String nombre;
 	private Float porcentaje;
 
 	public Modelo() {
 	}
 
-	public Modelo(int idModelo, int idMarca) {
+	public Modelo(int idModelo, Marca idMarca) {
 		this.idModelo = idModelo;
-		this.idMarca = idMarca;
+		this.marca = idMarca;
 	}
 
-	public Modelo(int idModelo, int idMarca, Integer idAnioDeVehiculo, String nombre, Float porcentaje) {
+	public Modelo(int idModelo, Marca idMarca, Aniodevehiculo idAniodevehiculo, String nombre, Float porcentaje) {
 		this.idModelo = idModelo;
-		this.idMarca = idMarca;
-		this.idAnioDeVehiculo = idAnioDeVehiculo;
+		this.marca = idMarca;
+		this.aniodevehiculo = idAniodevehiculo;
 		this.nombre = nombre;
 		this.porcentaje = porcentaje;
+	}
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
+
+	public Aniodevehiculo getAniodevehiculo() {
+		return aniodevehiculo;
+	}
+
+	public void setAniodevehiculo(Aniodevehiculo aniodevehiculo) {
+		this.aniodevehiculo = aniodevehiculo;
 	}
 
 	@Id
@@ -46,24 +62,7 @@ public class Modelo  {
 		this.idModelo = idModelo;
 	}
 
-	@Column(name = "idMarca", nullable = false)
-	public int getIdMarca() {
-		return this.idMarca;
-	}
-
-	public void setIdMarca(int idMarca) {
-		this.idMarca = idMarca;
-	}
-
-	@Column(name = "idAnioDeVehiculo")
-	public Integer getIdAnioDeVehiculo() {
-		return this.idAnioDeVehiculo;
-	}
-
-	public void setIdAnioDeVehiculo(Integer idAnioDeVehiculo) {
-		this.idAnioDeVehiculo = idAnioDeVehiculo;
-	}
-
+	
 	@Column(name = "nombre", length = 40)
 	public String getNombre() {
 		return this.nombre;
